@@ -1,4 +1,5 @@
-from django.conf.urls import url
+from django.urls import re_path
+
 try:
     # Django <=1.9
     from django.conf.urls import patterns
@@ -9,7 +10,7 @@ from . import views
 
 
 urls = [
-    url('^filter$', views.filter_models, name='searchable-select-filter'),
+    re_path('^filter$', views.filter_models, name='searchable-select-filter'),
 ]
 
 if patterns:
